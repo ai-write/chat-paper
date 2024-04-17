@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+  futureai_mysql:
+    container_name: futureai_mysql
+    image: mysql:5.7.23
+    restart: always
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/logs:/logs
+      - ./future_ai_write_init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+    environment:
+      - "MYSQL_ROOT_PASSWORD=FutureAI123456_"
+    networks:
+      - futureai
+  futureai_spring:
+    image: futureai/futureai_write_spring:v1.0.0
+    container_name: futureai_spring
+    restart: always
+    depends_on:
+      - futureai_mysql
+    ports:
+      - 9000:9000
+    networks:
+      - futureai
+  futureai_nuxt:
+    image: futureai/futureai_write_nuxt:v1.0.0
+    container_name: futureai_nuxt
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - futureai
+
+networks:
+  futureai:

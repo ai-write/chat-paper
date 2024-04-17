@@ -1,0 +1,10 @@
+@import "_variables.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body, #__nuxt, .n-config-provider{
+    height: 100%;
+    width: 100%;
+}

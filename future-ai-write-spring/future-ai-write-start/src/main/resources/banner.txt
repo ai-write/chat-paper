@@ -1,0 +1,8 @@
+${AnsiColor.BLUE}          ______     _                   ___  _____ 
+${AnsiColor.BLUE}          |  ___|   | |                 / _ \|_   _|
+${AnsiColor.BLUE}          | |_ _   _| |_ _   _ _ __ ___/ /_\ \ | |  
+${AnsiColor.BLUE}          |  _| | | | __| | | | '__/ _ \  _  | | |  
+${AnsiColor.BLUE}          | | | |_| | |_| |_| | | |  __/ | | |_| |_ 
+${AnsiColor.BLUE}          \_|  \__,_|\__|\__,_|_|  \___\_| |_/\___/ 
+
+${AnsiColor.BLUE} FutureAI :: Running SpringBoot ${spring-boot.version}

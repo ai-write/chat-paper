@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+
+
+mybatis-plus:
+  mapper-locations: classpath:com/futureai/write/infrastructure/persistence/mapper/xml/*Mapper.xml
+  typeAliasesPackage: com.futureai.write.infrastructure.persistence.db
+  global-config:
+    banner: false
+    db-config:
+      id-type: assign_id
+      insert-strategy: not_null
+      update-strategy: not_null
+      where-strategy: not_null
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: 'null'
